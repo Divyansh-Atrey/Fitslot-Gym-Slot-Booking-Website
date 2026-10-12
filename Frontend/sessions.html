@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitslot - Gym Sessions</title>
+    <link rel="stylesheet" href="sessions.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Available Gym Sessions</h1>
+    
+    <div class="filter-section">
+        <label for="dateFilter">Filter by Date:</label>
+        <input type="date" id="dateFilter">
+        <button onclick="loadSessions()">Search</button>
+    </div>
+
+    <div id="sessions-list">
+        <p style="text-align: center;">Loading sessions...</p>
+    </div>
+</div>
+
+<script>
+    document.getElementById('dateFilter').valueAsDate = new Date();
+
+    async function loadSessions() {
+        const date = document.getElementById('dateFilter').value;
+        const listContainer = document.getElementById('sessions-list');
+        listContainer.innerHTML = '<p style="text-align: center;">Loading sessions...</p>';
+
+        try {
+            const response = await fetch(`/api/sessions?date=${date}`);
+            const sessions = await response.json();
+
+            if (!response.ok) {
+                listContainer.innerHTML = `<p style="color: #ff5252; text-align: center;">Error: ${sessions.error || 'Could not load sessions'}</p>`;
+                return;
+            }
+
+            if (sessions.length === 0) {
+                listContainer.innerHTML = '<p style="text-align: center;">No sessions available for this date.</p>';
+                return;
+            }
+
+            listContainer.innerHTML = '';
+            sessions.forEach(session => {
+                const isFull = session.booked >= session.capacity;
+                const card = document.createElement('div');
+                card.className = 'session-card';
+                
+                card.innerHTML = `
+                    <div class="session-info">
+                        <h3>Session Time: ${session.startHour}:00</h3>
+                        <p>Date: ${session.date}</p>
+                        <p>Booked: ${session.booked} / ${session.capacity} | Waitlist: ${session.waitlistCount}</p>
+                    </div>
+                    <div>
+                        <span class="status-badge ${isFull ? 'badge-full' : 'badge-open'}">
+                            ${isFull ? 'Full (Join Waitlist)' : 'Available'}
+                        </span>
+                        <button onclick="bookSession('${session.id}')" style="margin-left: 10px;">
+                            ${isFull ? 'Join Waitlist' : 'Book Now'}
+                        </button>
+                    </div>
+                `;
+                listContainer.appendChild(card);
+            });
+        } catch (err) {
+            listContainer.innerHTML = '<p style="color: #ff5252; text-align: center;">Failed to connect to the server.</p>';
+        }
+    }
+
+    async function bookSession(sessionId) {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            alert('Please log in first to book a session.');
+            window.location.href = 'login.html';
+            return;
+        }
+
+        try {
+            const response = await fetch('/api/bookings', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({ sessionId })
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                if (data.checkInCode) {
+                    alert(`${data.message}\nYour Check-In Code: ${data.checkInCode}`);
+                } else {
+                    alert(data.message);
+                }
+                loadSessions();
+            } else {
+                alert('Error: ' + (data.error || 'Could not process booking'));
+            }
+        } catch (err) {
+            alert('An unexpected error occurred.');
+        }
+    }
+
+    window.onload = loadSessions;
+</script>
+
+</body>
+</html>

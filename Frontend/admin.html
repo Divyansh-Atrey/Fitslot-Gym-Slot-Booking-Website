@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitslot - Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="webname">FITSLOT ADMIN</li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="admin.html" class="active">Admin Panel</a></li>
+                <li><a href="#" onclick="logout()">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="admin-main">
+        <h1>Gym Administration Dashboard</h1>
+        <p class="section-desc">Create new hourly sessions and process member door check-ins.</p>
+
+        <div class="admin-grid">
+            <div class="dashboard-card">
+                <h3>Create New Session</h3>
+                <form id="create-session-form">
+                    <div class="form-group">
+                        <label for="session-date">Session Date</label>
+                        <input type="date" id="session-date" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="session-hour">Start Hour (0 - 23)</label>
+                        <input type="number" id="session-hour" class="form-input" min="0" max="23" required placeholder="e.g., 9 for 09:00">
+                    </div>
+                    <button type="submit" class="btn-success">Create Session (Capacity: 20)</button>
+                </form>
+            </div>
+
+            <div class="dashboard-card">
+                <h3>Member Door Check-In</h3>
+                <form id="check-in-form">
+                    <div class="form-group">
+                        <label for="check-in-code">Enter 6-Character Check-In Code</label>
+                        <input type="text" id="check-in-code" class="form-input" required placeholder="e.g., 7XKP2Q" style="text-transform: uppercase;">
+                    </div>
+                    <button type="submit" class="btn-primary">Verify & Check In</button>
+                </form>
+                <div id="check-in-result" class="check-in-result"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>

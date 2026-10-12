@@ -1,0 +1,51 @@
+document.addEventListener('DOMContentLoaded', () => {
+
+    const form = document.getElementById('login-form');
+
+    form.addEventListener('submit', handleLogin);
+
+});
+
+async function handleLogin(e) {
+    e.preventDefault();
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    try {
+
+        const response = await fetch(
+            'http://localhost:3000/api/login',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email,
+                    password
+                })
+            }
+        );
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.error);
+        }
+
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('role', data.role);
+
+        alert('Login successful!');
+
+        if (data.role === 'admin') {
+            window.location.href = 'admin.html';
+        } else {
+            window.location.href = 'sessions.html';
+        }
+
+    } catch (err) {
+        alert('Login failed: ' + err.message);
+    }
+}

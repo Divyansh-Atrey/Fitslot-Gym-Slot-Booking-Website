@@ -7,23 +7,31 @@
     <title>Fitslot - Gym Slot Booking Website</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <header>
         <nav>
             <ul>
-                <img src="logo.png" alt="image" class="logo">
+                <li class="webname">
+                    FITSLOT
+                </li>
+
                 <li>
-                    <a href="index.html">Home</a>
+                    <a href="index.html" class="active">Home</a>
                 </li>
                 <li>
                     <a href="features.html">Features</a>
                 </li>
                 <li>
-                    <a href="sessiosn.html">Sessions</a>
+                    <a href="sessions.html">Sessions</a>
                 </li>
                 <li>
                     <a href="login.html">Login</a>
@@ -37,18 +45,68 @@
     </header>
 
     <h1>
-     Book Your Gym Session
+        Book Your Gym Session Anytime,
     </h1>
-    <h2>Anytime,Anywhere.</h2>
+    <h2>Anywhere.</h2>
     <br>
-    <p>Check Real Time Availability,reserves your seat,join waitlists</p>
+    <p>Check Real Time Availability, reserves your seat, join waitlists</p>
     <p>and manages all your Gym Sessions</p>
     <br><br>
-     <a href="sessions.html" class="booksess">Book A Session <img src="https://api.iconify.design/formkit/arrowright.svg" alt="arrow"></a>  
-    <img class="mana"  src="person.png" alt="person photo">
-    <footer>
-       
+    <a href="sessions.html" class="booksess">Book A Session
+
+        <img src="https://api.iconify.design/formkit/arrowright.svg" alt="arrow"></a>
+    <a href="features.html" class="feat">Explore Features</a>
+    <img class="mana" src="images/person.png" alt="person photo">
+    <br><br><br><br>
+    <div class="container">
+        <div class="box box1">
+            <img src="images/calendar.png" width="70px" alt="">
+            <h4>
+                Easy Booking
+            </h4>
+            <p class="about">Reserve Gym Slots in seconds </p>
+            <p class="about">with a few clicks. </p>
+        </div>
+        <div class="box box2">
+            <img src="images/group.png" width="70px" alt="">
+            <h4>Real Time Availability</h4>
+            <p class="about">See Live seat counts and </p>
+            <p class="about">updated schedules.</p>
+        </div>
+        <div class="box box3">
+            <img src="images/clock.png" width="70px" alt="">
+            <h4>Smart Waitlist</h4>
+            <p class="about">No slots?Join the waitlist and</p>
+            <p class="about">get auto - booked.</p>
+        </div>
+        <div class="box box4">
+            <img src="images/shield.png" width="70px" alt="">
+            <h4>Secure Account</h4>
+            <p class="about">Your data is protected with</p>
+            <p class="about"> industry - standard security.</p>
+        </div>
+    </div>
+<div class="container2">
+    <div class="box21">
+        <h5>Live Session Queue and Available spaces</h5>
+        <p>Real-time capacity tracking for upcoming one-hour gym session</p>
+        <div id="live-session-queue">
+            <p>Loading live session data...</p>
+        </div>
+    </div>
+</div>
+
+
+    <footer class="footer">
+        <p>&copy; 2026 FitSlot. All rights reserved.</p>
+        <div class="foot-links">
+            <a href="features.html">Features</a>
+            <a href="sessions.html">Sessions</a>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+        </div>
     </footer>
+    <script src="app.js"></script>
 </body>
 
 </html>

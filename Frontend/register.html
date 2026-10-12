@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitslot - Register Page</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+     <header>
+        <nav>
+            <ul>
+                <li  class="webname"  >
+                    FITSLOT
+                </li>
+                
+                <li>
+                    <a href="index.html"  >Home</a>
+                </li>
+                <li>
+                    <a href="features.html">Features</a>
+                </li>
+                <li>
+                    <a href="sessions.html">Sessions</a>
+                </li>
+                <li>
+                    <a href="login.html"   >Login</a>
+                </li>
+                <li>
+                    <a href="register.html"class="active"  > Register</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+<div class="register-cont">
+    <h1 class="welc" >Create Account</h1>
+    <p class="subh" >Register to start booking your gym sessions.</p>
+    <form  id="register-form">
+            <div class="group">
+
+            <label for="name">Full Name</label>
+            <input type="text"  id="fname" placeholder="eg. Divyansh Atrey" required >
+        </div>
+        <div class="group">
+
+            <label for="email-id">Email Address</label>
+            <input type="email"  id="email" placeholder="member@fitslot.com" required >
+        </div>
+        <div class="group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="......" required >
+        </div>
+        <button class="btn-submit">Submit
+                         
+        </button>
+    </form>
+    <p class="noacc" >Have an Account? <a href="login.html">Login Here</a></p>
+</div>
+        <footer class="footer">
+    <p>&copy; 2026 FitSlot. All rights reserved.</p>
+    <div class="foot-links">
+        <a href="features.html">Features</a>
+        <a href="sessions.html">Sessions</a>
+          <a href="register.html">Register</a>
+        <a href="login.html">Login</a>
+    </div>
+
+    </footer>
+    <script src="register.js"></script>
+</body>
+</html>

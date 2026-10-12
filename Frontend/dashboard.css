@@ -1,0 +1,139 @@
+/* Main Page Layout */
+.dashboard-main {
+    padding: 40px 100px;
+}
+
+.dashboard-main h1 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.section-desc {
+    margin-left: 0;
+    margin-bottom: 30px;
+    color: #E2E8F0;
+}
+
+/* Admin Grid Layout */
+.admin-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* Cards */
+.dashboard-card {
+    background: #1E1E24;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.booking-card {
+    background: #1E1E24;
+    padding: 24px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 15px;
+}
+
+.booking-card h3 {
+    color: white;
+    margin-bottom: 8px;
+}
+
+.booking-card p {
+    font-size: 14px;
+    color: #94A3B8;
+    margin-bottom: 12px;
+    margin-left: 0;
+}
+
+/* Form Groups and Inputs */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    color: #E2E8F0;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: #121216;
+    color: white;
+    box-sizing: border-box;
+}
+
+/* Action Buttons */
+.btn-success {
+    width: 100%;
+    background: #10B981;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-success:hover {
+    background: #059669;
+}
+
+.btn-primary {
+    width: 100%;
+    background: #3B82F6;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #2563EB;
+}
+
+.btn-danger {
+    background: #EF4444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-danger:hover {
+    background: #DC2626;
+}
+
+/* Check-in Code Badge & Results */
+.check-in-badge {
+    background: rgba(52, 211, 153, 0.15);
+    color: #34D399;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 14px;
+    border: 1px solid rgba(52, 211, 153, 0.3);
+    display: inline-block;
+}
+
+.check-in-result {
+    margin-top: 16px;
+    font-size: 14px;
+    font-weight: 600;
+}

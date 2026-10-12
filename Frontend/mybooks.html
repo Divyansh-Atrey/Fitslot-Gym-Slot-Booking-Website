@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitslot - My Bookings</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li class="webname">FITSLOT</li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="sessions.html">Sessions</a></li>
+                <li><a href="my-bookings.html" class="active">My Bookings</a></li>
+                <li><a href="#" onclick="logout()">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="dashboard-main">
+        <h1>Your Confirmed Bookings</h1>
+        <p class="section-desc">View your scheduled sessions, retrieve your door check-in codes, or cancel if needed.</p>
+
+        <!-- Bookings Container -->
+        <div id="my-bookings-container">
+            <p class="section-desc">Loading your bookings...</p>
+        </div>
+    </main>
+
+    <script src="mybooks.js"></script>
+</body>
+
+</html>

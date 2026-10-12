@@ -1,0 +1,90 @@
+.admin-main {
+    padding: 40px 100px;
+}
+
+.admin-main h1 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.section-desc {
+    margin-left: 0;
+    margin-bottom: 30px;
+    color: #E2E8F0;
+}
+
+.admin-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.dashboard-card {
+    background: #1E1E24;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dashboard-card h3 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    color: #E2E8F0;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: #121216;
+    color: white;
+    box-sizing: border-box;
+}
+
+.btn-success {
+    width: 100%;
+    background: #10B981;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-success:hover {
+    background: #059669;
+}
+
+.btn-primary {
+    width: 100%;
+    background: #3B82F6;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #2563EB;
+}
+
+.check-in-result {
+    margin-top: 16px;
+    font-size: 14px;
+    font-weight: 600;
+}
