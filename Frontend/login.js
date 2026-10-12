@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     const form = document.getElementById('login-form');
-
-    form.addEventListener('submit', handleLogin);
-
+    if (form) {
+        form.addEventListener('submit', handleLogin);
+    }
 });
 
 async function handleLogin(e) {
@@ -13,7 +12,6 @@ async function handleLogin(e) {
     const password = document.getElementById('password').value;
 
     try {
-
         const response = await fetch(
             'http://localhost:3000/api/login',
             {
@@ -42,7 +40,7 @@ async function handleLogin(e) {
         if (data.role === 'admin') {
             window.location.href = 'admin.html';
         } else {
-            window.location.href = 'sessions.html';
+            window.location.href = 'dashboard.html';
         }
 
     } catch (err) {

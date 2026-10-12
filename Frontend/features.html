@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fitslot - Features</title>
+    <link rel="stylesheet" href="features.css">
+    
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul id="nav-list">
+            
+            </ul>
+        </nav>
+    </header>
+
+    <div class="b2">
+        <h1>Fitslot Features</h1>
+        
+        <div class="b3">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500" alt="gym">
+            <div class="b4">Instant Booking</div>
+            <div class="b5">Browse available gym slots and reserve your training time with one click.</div>
+        </div>
+
+        <div class="b3">
+            <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=500" alt="waitlist">
+            <div class="b4">Smart Waitlist</div>
+            <div class="b5">If a slot is full, join the waitlist and get automatically promoted when someone cancels.</div>
+        </div>
+
+        <div class="b3">
+            <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=500" alt="code">
+            <div class="b4">Check-In Codes</div>
+            <div class="b5">Receive a unique digital code for every confirmed booking for fast entry.</div>
+        </div>
+    </div>
+
+    <script>
+        const token = localStorage.getItem('token');
+        const navList = document.getElementById('nav-list');
+
+        if (token) {
+            navList.innerHTML = `
+                <li class="webname">FITSLOT</li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="features.html" class="active">Features</a></li>
+                <li><a href="sessions.html">Sessions</a></li>
+                <li><a href="my-bookings.html">My Bookings</a></li>
+                <li><a href="#" onclick="logout()">Logout</a></li>
+            `;
+        } else {
+            navList.innerHTML = `
+                <li class="webname">FITSLOT</li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="features.html" class="active">Features</a></li>
+                <li><a href="index.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            `;
+        }
+
+        function logout() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('role');
+            window.location.href = 'index.html';
+        }
+    </script>
+
+</body>
+</html>
