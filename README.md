@@ -9,7 +9,7 @@ Live Website URL:https://fitslot-gym-slot-booking-website.onrender.com/
 - Sessions whose date and time have already passed according to the system clock are automatically closed and cannot be booked or cancelled.
 - Each session has a default capacity limit of 20 slots unless specified otherwise by an admin.
 
-#Credentials
+##Credentials
 Admin Credentials
 email:a@gmail.com
 password:123
