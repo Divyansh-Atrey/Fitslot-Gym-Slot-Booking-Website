@@ -1,3 +1,7 @@
+const API_URL = window.location.hostname === 'localhost' 
+    ? 'http://localhost:3000' 
+    : 'https://fitslot-gym-slot-booking-website.onrender.com';
+
 document.addEventListener('DOMContentLoaded', () => {
     checkAdminAuth();
     
@@ -22,7 +26,7 @@ async function createSession(e) {
     const token = localStorage.getItem('token');
 
     try {
-        const res = await fetch('http://localhost:3000/api/admin/sessions', {
+        const res = await fetch(`${API_URL}/api/admin/sessions`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -51,7 +55,7 @@ async function processCheckIn(e) {
     resultDiv.textContent = 'Verifying code...';
 
     try {
-        const res = await fetch('http://localhost:3000/api/admin/check-in', {
+        const res = await fetch(`${API_URL}/api/admin/check-in`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
