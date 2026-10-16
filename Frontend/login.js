@@ -11,9 +11,14 @@ async function handleLogin(e) {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
+    // Dynamically choose between local and live Render backend
+    const API_URL = window.location.hostname === 'localhost' 
+        ? 'http://localhost:3000' 
+        : 'https://fitslot-gym-slot-booking-website.onrender.com';
+
     try {
         const response = await fetch(
-            'http://localhost:3000/api/login',
+            `${API_URL}/api/login`,
             {
                 method: 'POST',
                 headers: {
