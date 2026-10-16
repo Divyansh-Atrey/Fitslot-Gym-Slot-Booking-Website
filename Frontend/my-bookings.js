@@ -1,3 +1,7 @@
+const API_URL = window.location.hostname === 'localhost' 
+    ? 'http://localhost:3000' 
+    : 'https://fitslot-gym-slot-booking-website.onrender.com';
+
 document.addEventListener('DOMContentLoaded', function() {
     const token = localStorage.getItem('token');
     
@@ -15,7 +19,7 @@ async function loadMyBookings() {
     container.innerHTML = '<p style="text-align: center;">Loading your bookings...</p>';
 
     try {
-        const response = await fetch('http://localhost:3000/api/my-bookings', {
+        const response = await fetch(`${API_URL}/api/my-bookings`, {
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('token')
             }
@@ -77,7 +81,7 @@ async function cancelBooking(sessionId) {
     }
 
     try {
-        let response = await fetch('http://localhost:3000/api/bookings/' + sessionId, {
+        let response = await fetch(`${API_URL}/api/bookings/` + sessionId, {
             method: 'DELETE',
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('token')
