@@ -13,7 +13,7 @@ async function handleLogin(e) {
 
     try {
         const response = await fetch(
-            'http://localhost:3000/api/login',
+            '/login',
             {
                 method: 'POST',
                 headers: {
