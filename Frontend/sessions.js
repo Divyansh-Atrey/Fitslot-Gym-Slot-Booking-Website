@@ -1,7 +1,11 @@
+const API_URL = window.location.hostname === 'localhost' 
+    ? 'http://localhost:3000' 
+    : 'https://fitslot-gym-slot-booking-website.onrender.com';
+
 document.addEventListener('DOMContentLoaded', () => {
     const token = localStorage.getItem('token');
     if (!token) {
-        alert("Firstly Register of Login to View Sessions.You can also view it on Main HomePage.")
+        alert("Firstly Register or Login to View Sessions. You can also view it on Main HomePage.");
         window.location.href = 'index.html';
         return;
     }
@@ -14,7 +18,7 @@ async function loadSessions() {
     listContainer.innerHTML = '<p style="text-align: center;">Loading sessions...</p>';
 
     try {
-        let url = 'http://localhost:3000/api/sessions';
+        let url = `${API_URL}/api/sessions`;
         if (dateFilter) {
             url += `?date=${dateFilter}`;
         }
@@ -52,7 +56,7 @@ async function loadSessions() {
 
 async function bookSession(sessionId) {
     try {
-        const response = await fetch('http://localhost:3000/api/bookings', {
+        const response = await fetch(`${API_URL}/api/bookings`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
